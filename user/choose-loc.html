@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Database</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://socialstudieshelp.com/wp-content/uploads/2024/02/Exploring-the-Cultural-Diversity-of-Europe.webp');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462567709_1724925585031052_4490126238712417040_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=aXcrO29n7uIQ7kNvgHCi3nC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEYs_r8YD6E0edmvQDXiy__0n-15fylEZhQIi5GI1RD2Q&oe=676A986A" alt="Kulturifiko Logo">
+            <h1>Kulturifiko</h1>
+        </div>
+        <div>
+            <a href="home.html">Home</a>
+            <a href="#">+ Create</a>
+            <a href="">Notification</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Menu</a>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+            <a href="login.html">Log In</a>
+        </div>
+    </div>
+
+    <style>
+    /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #365486;
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar img {
+            height: 50px;
+            width: auto;
+        }
+
+        .navbar h1 {
+            color: #DCF2F1;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .navbar a {
+            color: #DCF2F1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #7FC7D9;
+            color: #0F1035;
+        }
+
+        .navbar a.active {
+            background-color: #1e3c72;
+            color: #fff;
+        }
+        
+    /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+    /* Toggle class for show/hide */
+        .show {
+            display: block;
+        }
+    </style>
+
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.querySelector(".dropdown-content");
+            dropdownContent.classList.toggle("show");
+        }
+    </script>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="location-container">
+            <h2>Choose a Location</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="continent">Continent <span class="required">*</span></label>
+                    <select id="continent" name="continent" required>
+                      <option value="option">- Select a Continent -</option>
+                      <option value="africa">AFRICA</option>
+                      <option value="asia">ASIA</option>
+                      <option value="australia">AUSTRALIA</option>
+                      <option value="europe">EUROPE</option>
+                      <option value="north-america">NORTH AMERICA</option>
+                      <option value="south-america">SOUTH AMERICA</option>
+                    </select>
+                  </div>
+                  
+                <div class="form-group">
+                    <label for="country">Country <span class="required">*</span></label>
+                    <select id="country" name="country" required>
+                        <option value="option">- Select a Country -</option>
+                    </select>
+                </div>  
+          
+                <div class="form-group">
+                    <label for="region">Region <span class="required">*</span></label>
+                    <select id="region" name="region" required>
+                        <option value="option">- Select a Region -</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="province">Province <span class="required">*</span></label>
+                    <select id="province" name="province" required>
+                      <option value="option">- Select a Province -</option>
+                    </select>
+                </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+    </div>
+
+    <script>
+const continentData = {
+  africa: ["Nigeria", "South Africa", "Kenya", "Egypt", "Morocco"],
+  asia: ["CHINA", "INDIA", "JAPAN", "PHILIPPINES", "SINGAPORE", "THAILAND"],
+  australia: ["Australia", "New Zealand", "Fiji", "Papua New Guinea"],
+  europe: ["France", "Germany", "Italy", "United Kingdom", "Spain"],
+  america: ["United States", "Canada", "Brazil", "Mexico", "Argentina"],
+};
+
+const regionData = {
+    philippines: [
+    { value: "region-1", text: "ILOCOS REGION" },
+    { value: "region-2", text: "CAGAYAN VALLEY" },
+    { value: "region-3", text: "CENTRAL LUZON" },
+    { value: "region-4a", text: "CALABARZON" },
+    { value: "mimaropa", text: "MIMAROPA" },
+    { value: "region-5", text: "BICOL" },
+    { value: "region-6", text: "WESTERN VISAYAS" },
+    { value: "region-7", text: "CENTRAL VISAYAS" },
+    { value: "region-8", text: "EASTERN VISAYAS" },
+    { value: "region-9", text: "ZAMBOANGA PENINSULA" },
+    { value: "region-10", text: "NORTHERN MINDANAO" },
+    { value: "region-11", text: "DAVAO" },
+    { value: "region-12", text: "SOCCSKSARGEN" },
+    { value: "region-13", text: "CARAGA" },
+    { value: "ncr", text: "NATIONAL CAPITAL" },
+    { value: "car", text: "CORDILLERA ADMINISTRATIVE REGION" },
+    { value: "barmm", text: "BANGSAMORO AUTONOMOUS" },
+  ],
+}
+
+const provinceData = {
+  car: [
+  { value: "abra", text: "ABRA" },
+  { value: "apayao", text: "APAYAO" },
+  { value: "benguet", text: "BENGUET" },
+  { value: "ifugao", text: "IFUGAO" },
+  { value: "kalinga", text: "KALINGA" },
+  { value: "mountain-province", text: "MOUNTAIN PROVINCE" },
+],
+}
+
+// Get the dropdown elements
+const continentDropdown = document.getElementById("continent");
+const countryDropdown = document.getElementById("country");
+const regionDropdown = document.getElementById("region");
+const provinceDropdown = document.getElementById("province");
+
+// Event listener for continent selection
+continentDropdown.addEventListener("change", function () {
+  const selectedContinent = this.value;
+
+  // Clear existing country options
+  countryDropdown.innerHTML = '<option value="">- Select a Country -</option>';
+
+  // Populate countries based on the selected continent
+  if (continentData[selectedContinent]) {
+    continentData[selectedContinent].forEach((country) => {
+      const option = document.createElement("option");
+      option.value = country.toLowerCase().replace(/\s+/g, "-"); // Convert to lowercase with hyphens
+      option.textContent = country;
+      countryDropdown.appendChild(option);
+    });
+  }
+});
+
+// Add an event listener to the country dropdown
+countryDropdown.addEventListener("change", function () {
+  const selectedCountry = this.value;
+
+  // Clear existing region options
+  regionDropdown.innerHTML = '<option value="">- Select a Region -</option>';
+
+  // Populate regions based on the selected country
+  if (regionData[selectedCountry]) {
+    regionData[selectedCountry].forEach((region) => {
+      const option = document.createElement("option");
+      option.value = region.value;
+      option.textContent = region.text;
+      regionDropdown.appendChild(option);
+    });
+  }
+});
+
+// Function to populate CAR provinces in a dropdown
+function populateCARProvinces() {
+  const provinceDropdown = document.getElementById("car-province");
+
+  // Clear the dropdown
+  provinceDropdown.innerHTML = '<option value="">- Select a Province -</option>';
+
+  // Add provinces to the dropdown
+  carProvinceData.forEach((province) => {
+    const option = document.createElement("option");
+    option.value = province.value;
+    option.textContent = province.text;
+    provinceDropdown.appendChild(option);
+  });
+}
+
+// Call the function when the page loads or when CAR is selected
+populateCARProvinces();
+
+    </script>
+
+    <style>
+         .main-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .location-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Title */
+.location-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1rem;
+  display: block;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.required {
+  color: red;
+}
+
+/* Dropdown Styling */
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Submit Button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+    </style>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="logo-section">
+      <img src="https://scontent.fcrk2-2.fna.fbcdn.net/v/t39.30808-6/465864101_3540395182936682_8788956950085722591_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=tkzg77-NVlAQ7kNvgEWQKY5&_nc_zt=23&_nc_ht=scontent.fcrk2-2.fna&_nc_gid=A5J6XQ8mnP4VyHNTBXbvK9k&oh=00_AYALspBcw0tRj71UgnKEmVJQVDvK6dVtFQ9yM4c73ToxwQ&oe=675E1742" alt="Logo" />
+    </div>
+
+        <div class="menu-section">
+            <h3>Elements of Culture</h3>
+            <div class="menu-item">
+                <ul>
+                    <li><a href="#">Geography</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Demographics</a></li>
+                    <li><a href="#">Culture</a></li>
+                </ul>
+            </div>
+
+        <div class="menu-section">
+            <h3>Learning Styles</h3>
+            <div class="menu-item">
+                <ul>
+                    <li><input type="checkbox">Visual</li>
+                    <li><input type="checkbox">Auditory & Oral</li>
+                    <li><input type="checkbox">Read & Write</li>
+                    <li><input type="checkbox">Kinesthetic</li>
+                </ul>
+            </div>
+
+        <div class="menu-section">
+            <h3>Location</h3>
+            <div class="menu-item">
+                <a href="choose-loc.html" class="active"><span>+</span> Choose a location</a>
+            </div>
+        </div>
+        
+    <div class="menu-section">
+      <h3>Resources</h3>
+      <div class="menu-item">
+        <span>🔗</span>
+        <a href="#">About Kulturifiko</a>
+      </div>
+    </div>
+  </div>
+
+<style>
+ /* Sidebar */
+ .sidebar {
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    width: 240px;  
+    height: 100%;
+    background-color: #365486;
+    padding-top: 30px;
+    z-index: 999; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0 5px 5px 0;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.logo-section img {
+  max-width: 100px;
+  border-radius: 5px;
+}
+
+/* Section Menus */
+.menu-section {
+  margin-bottom: 20px;
+}
+
+.menu-section h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #DCF2F1;
+}
+
+/* Menu Items */
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 3px 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  padding: 5px 5px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.menu-item a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+.menu-item a:hover {
+    background-color: #7FC7D9;
+    color: #0F1035;
+}
+
+.menu-item a.active {
+    background-color: #1e3c72;
+    color: #fff;
+}
+
+.menu-item ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.menu-item li {
+    margin-bottom: 10px;
+}
+  
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+</style>
+</body>
+</html>
